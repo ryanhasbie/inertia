@@ -1,8 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Application;
-use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Application;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +31,12 @@ use Inertia\Inertia;
 //     return Inertia::render('Dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/', function() {
-    return Inertia::render('Home', [
-        'name'  => 'Ryan Hasbie',
-    ]);
-});
+Route::get('/', HomeController::class);
+Route::get('/dashboard', DashboardController::class);
+Route::get('/login', [LoginController::class, 'create']);
+Route::post('/login', [LoginController::class, 'store']);
+
+
+
 
 require __DIR__.'/auth.php';
