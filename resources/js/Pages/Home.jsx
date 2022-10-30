@@ -4,7 +4,14 @@ import App from '@/Layouts/App'
 export default function Home(props) {
     return (
         <App title="Home">
-            My Name Is {props.username}
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body">
+                    <h2 className="card-title">Home</h2>
+                    <p>My name is {props.username}</p>
+                    <div className="card-actions justify-end">
+                    </div>
+                </div>
+            </div>
         </App>
     )
 }
