@@ -3,7 +3,7 @@ import App from '@/Layouts/App'
 
 export default function Home(props) {
     return (
-        <App title="Home">
+        <>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Home</h2>
@@ -12,6 +12,9 @@ export default function Home(props) {
                     </div>
                 </div>
             </div>
-        </App>
+        </>
     )
 }
+
+Home.layout = (page)   => <App children={page} title="Home"/>
+

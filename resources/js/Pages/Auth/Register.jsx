@@ -4,7 +4,7 @@ import { Link } from '@inertiajs/inertia-react'
 
 export default function Register() {
     return (
-        <Guest title="Register">
+        <>
             <div className="grid h-screen place-items-center">
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
@@ -20,6 +20,8 @@ export default function Register() {
                     </div>
                 </div>
             </div>
-        </Guest>
+        </>
     )
 }
+Register.layout = (page)   => <Guest children={page} title="Register"/>
+

@@ -3,7 +3,7 @@ import App from '@/Layouts/App'
 
 export default function Dashboard() {
     return (
-        <App title="Dashboard">
+        <>
             <div className="card w-96 bg-base-100 shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Dashboard</h2>
@@ -12,6 +12,8 @@ export default function Dashboard() {
                     </div>
                 </div>
             </div>
-        </App>
+        </>
     )
 }
+
+Dashboard.layout = (page)   => <App children={page} title="Dashboard"/>
