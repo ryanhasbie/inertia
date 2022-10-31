@@ -22,7 +22,10 @@ class LoginController extends Controller
 
         if(Auth::attempt($request->only('email', 'password'), $request->remember)) {
             session()->regenerate();
-            return redirect('/dashboard');
+            return redirect('/dashboard')->with([
+                'type'    => 'success',
+                'message' => 'You are logined',
+            ]);
         }
 
         throw ValidationException::withMessages([
